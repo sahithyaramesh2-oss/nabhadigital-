@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Teacher Dashboard - Nabha Digital Learning</title>
+  <link rel="stylesheet" href="style.css">
+  <script defer src="teacher.js"></script>
+  <link rel="stylesheet" href="style.css">
+  <link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#2563eb">
+</head>
+<body>
+  <header>
+    <h1>Teacher Dashboard</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="student.html">Student</a>
+      <a href="teacher.html">Teacher</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <h2>Class Progress Overview</h2>
+    <table id="progress-table">
+      <thead>
+        <tr>
+          <th>Student Name</th>
+          <th>Completed Lessons</th>
+          <th>Total Lessons</th>
+          <th>Progress</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Data will be filled by JS -->
+      </tbody>
+    </table>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Nabha Digital Learning | Smart India Hackathon</p>
+  </footer>
+  <script>
+  if ("serviceWorker" in navigator) {
+    navigator.serviceWorker.register("sw.js")
+      .then(() => console.log("✅ Service Worker Registered"))
+      .catch(err => console.error("SW registration failed:", err));
+  }
+</script>
+</body>
+</html>

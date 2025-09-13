@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About - Nabha Digital Learning</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>About Us</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="student.html">Student</a>
+      <a href="teacher.html">Teacher</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section>
+      <h2>Our Mission</h2>
+      <p>
+        The Nabha Digital Learning Platform is designed for rural school students 
+        who lack access to modern digital resources. Our mission is to bridge 
+        the digital divide by providing offline-first, low-cost, multilingual 
+        educational tools.
+      </p>
+    </section>
+
+    <section>
+      <h2>Why It Matters</h2>
+      <p>
+        In many rural areas, poor internet connectivity and outdated infrastructure 
+        prevent students from developing essential digital skills. 
+        This platform empowers students with interactive lessons, digital literacy modules, 
+        and tools for teachers to track progress.
+      </p>
+    </section>
+
+    <section>
+      <h2>Key Features</h2>
+      <ul>
+        <li>📚 Interactive offline lessons</li>
+        <li>🌍 Content in Punjabi, Hindi, and English</li>
+        <li>👩‍🏫 Teacher dashboards for monitoring progress</li>
+        <li>💻 Digital literacy training for rural students</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Nabha Digital Learning | Smart India Hackathon</p>
+  </footer>
+  <script>
+  if ("serviceWorker" in navigator) {
+    navigator.serviceWorker.register("sw.js")
+      .then(() => console.log("✅ Service Worker Registered"))
+      .catch(err => console.error("SW registration failed:", err));
+  }
+</script>
+</body>
+</html>
