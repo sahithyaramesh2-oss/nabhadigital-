@@ -3,52 +3,33 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Teacher Dashboard - Nabha Digital Learning</title>
+  <title>Teacher Dashboard</title>
   <link rel="stylesheet" href="style.css">
-  <script defer src="teacher.js"></script>
-  <link rel="stylesheet" href="style.css">
-  <link rel="manifest" href="manifest.json">
-<meta name="theme-color" content="#2563eb">
 </head>
 <body>
   <header>
-    <h1>Teacher Dashboard</h1>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="student.html">Student</a>
-      <a href="teacher.html">Teacher</a>
-      <a href="about.html">About</a>
-      <a href="contact.html">Contact</a>
-      <a href="dobut.html">Doubt section</a>
-    </nav>
+    <h1 id="title">Teacher Dashboard</h1>
+    <button id="lang-toggle">ਪੰਜਾਬੀ / English</button>
   </header>
 
-  <main class="container">
-    <h2>Class Progress Overview</h2>
-    <table id="progress-table">
-      <thead>
-        <tr>
-          <th>Student Name</th>
-          <th>Completed Lessons</th>
-          <th>Total Lessons</th>
-          <th>Progress</th>
-        </tr>
-      </thead>
-      <tbody>
-        <!-- Data will be filled by JS -->
-      </tbody>
-    </table>
+  <main>
+    <!-- Teacher Navigation -->
+    <nav class="teacher-nav">
+      <a href="teacher.html">🏠 Dashboard</a>
+      <a href="lectures.html">🎥 Go to Lectures</a>
+      <a href="authoring.html">📝 Create Content</a>
+    </nav>
+
+    <section class="welcome">
+      <h2 id="welcome-text">Welcome, Teacher!</h2>
+      <p id="desc-text">Here you can manage your content, upload lectures, and track student progress.</p>
+    </section>
   </main>
 
   <footer>
-    <p>&copy; 2025 Nabha Digital Learning | Smart India Hackathon</p>
+    <p>&copy; 2025 Digital Learning Platform - Nabha</p>
   </footer>
-  <script>
-  if ("serviceWorker" in navigator) {
-    navigator.serviceWorker.register("sw.js")
-      .then(() => console.log("✅ Service Worker Registered"))
-      .catch(err => console.error("SW registration failed:", err));
-  }
-</script>
+
+  <script src="app.js"></script>
 </body>
 </html>
