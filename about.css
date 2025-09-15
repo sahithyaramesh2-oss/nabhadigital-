@@ -1,0 +1,78 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: linear-gradient(135deg, #e0f7fa, #f0f9ff);
+  color: #333;
+  line-height: 1.6;
+  padding: 20px;
+}
+
+/* About Container */
+.about-container {
+  max-width: 900px;
+  margin: auto;
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+/* Heading */
+.about-container h1 {
+  font-size: 2.4rem;
+  text-align: center;
+  margin-bottom: 20px;
+  color: #00796b;
+  border-bottom: 2px solid #00796b;
+  padding-bottom: 10px;
+}
+
+/* Paragraphs */
+.about-container p {
+  margin-bottom: 15px;
+  text-align: justify;
+  font-size: 1.1rem;
+}
+
+/* Highlight Box */
+.highlight {
+  background: #e0f2f1;
+  padding: 14px;
+  border-left: 5px solid #00796b;
+  border-radius: 6px;
+  margin: 20px 0;
+  font-style: italic;
+  color: #004d40;
+}
+
+/* Team Section */
+.team {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 18px;
+  margin-top: 25px;
+}
+
+.team-member {
+  background: #fafafa;
+  border-radius: 10px;
+  padding: 15px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid #ddd;
+}
+
+.team-member:hover {
+  transform: translateY(-6px);
+  box-shadow: 0px 6px 14px rgba(0, 0, 0, 0.2);
+}
+
+.te
