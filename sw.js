@@ -1,54 +1,52 @@
-const CACHE_NAME = "digi-learn-cache-v1";
-const urlsToCache = [
-  "index.html",
-  "style.css",
-  "app.js",
-  "manifest.json",
-  "about.html",
-  "contact.html",
-  "student.html",
-  "teacher.html",
-  "dobut.html",
-  "icons/icon-192.png",
-  "icons/icon-512.png"
+const CACHE_NAME = "nabha-digital-cache-v1";
+const OFFLINE_URL = "offline.html";
+
+// List of files you want cached (add your pages here)
+const FILES_TO_CACHE = [
+  "/",
+  "/index.html",
+  "/style.css",
+  "/app.js",
+  "/manifest.json",
+  "/student.html",
+  "/teacher.html",
+  "/dobut.html",
+  "/about.html",
+  "/contact.html",
+  "/lectures.html",
+  "/authoring.html",
+  OFFLINE_URL
 ];
 
-// Install SW and cache files
-self.addEventListener("install", (event) => {
+// Install Service Worker and cache files
+self.addEventListener("install", event => {
   event.waitUntil(
-    caches.open(CACHE_NAME).then((cache) => {
-      console.log("Caching app shell...");
-      return cache.addAll(urlsToCache);
+    caches.open(CACHE_NAME).then(cache => {
+      console.log("📦 Caching app shell and content");
+      return cache.addAll(FILES_TO_CACHE);
     })
   );
+  self.skipWaiting();
 });
 
-// Activate SW and clear old caches
-self.addEventListener("activate", (event) => {
+// Activate - cleanup old caches
+self.addEventListener("activate", event => {
   event.waitUntil(
-    caches.keys().then((cacheNames) => {
+    caches.keys().then(keys => {
       return Promise.all(
-        cacheNames.map((cache) => {
-          if (cache !== CACHE_NAME) {
-            console.log("Deleting old cache:", cache);
-            return caches.delete(cache);
-          }
-        })
+        keys.filter(k => k !== CACHE_NAME).map(k => caches.delete(k))
       );
     })
   );
+  self.clients.claim();
 });
 
-// Fetch from cache, fallback to network
-self.addEventListener("fetch", (event) => {
+// Fetch - serve cached content when offline
+self.addEventListener("fetch", event => {
   event.respondWith(
-    caches.match(event.request).then((response) => {
-      return (
-        response ||
-        fetch(event.request).catch(() =>
-          caches.match("index.html") // fallback offline page
-        )
-      );
+    caches.match(event.request).then(response => {
+      // Return cached file OR fetch from network
+      return response || fetch(event.request).catch(() => caches.match(OFFLINE_URL));
     })
   );
 });

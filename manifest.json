@@ -1,11 +1,10 @@
 {
-  "name": "Digital Learning Platform - Nabha",
-  "short_name": "DigiLearn Nabha",
-  "start_url": "index.html",
+  "name": "Nabha Digital Learning",
+  "short_name": "NabhaDigital",
+  "start_url": "/index.html",
   "display": "standalone",
-  "background_color": "#ffffff",
+  "background_color": "#2563eb",
   "theme_color": "#2563eb",
-  "orientation": "portrait",
   "icons": [
     {
       "src": "icons/icon-192.png",
@@ -19,3 +18,4 @@
     }
   ]
 }
+
