@@ -9,14 +9,9 @@
   <link rel="manifest" href="manifest.json">
   <meta name="theme-color" content="#2563eb">
 
-  <!-- Service Worker -->
-  <script>
-    if ("serviceWorker" in navigator) {
-      navigator.serviceWorker.register("sw.js")
-        .then(() => console.log("✅ Service Worker Registered"))
-        .catch(err => console.error("❌ SW registration failed:", err));
-    }
-  </script>
+  <script src="/js/swap.js"></script>
+</body>
+
 </head>
 <body>
   <div class="contact-container">
