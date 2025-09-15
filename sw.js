@@ -1,24 +1,39 @@
-const CACHE_NAME = "nabha-digital-cache-v1";
+const CACHE_NAME = "nabha-digital-cache-v2";
 const OFFLINE_URL = "offline.html";
 
-// List of files you want cached (add your pages here)
+// ✅ Add ALL pages, CSS, and JS here
 const FILES_TO_CACHE = [
-  "/",
+  "/",                 // root
   "/index.html",
-  "/style.css",
-  "/app.js",
-  "/manifest.json",
   "/student.html",
   "/teacher.html",
-  "/dobut.html",
   "/about.html",
   "/contact.html",
+  "/dobut.html",
+  "/announcements.html",
   "/lectures.html",
   "/authoring.html",
+
+  // CSS
+  "/style.css",
+  "/student.css",
+  "/contact.css",
+  "/dobut.css",
+  "/about.css",
+
+  // JS
+  "/app.js",
+  "/student.js",
+  "/contact.js",
+  "/dobut.js",
+  "/about.js",
+
+  // Manifest & fallback
+  "/manifest.json",
   OFFLINE_URL
 ];
 
-// Install Service Worker and cache files
+// Install Service Worker
 self.addEventListener("install", event => {
   event.waitUntil(
     caches.open(CACHE_NAME).then(cache => {
@@ -45,7 +60,6 @@ self.addEventListener("activate", event => {
 self.addEventListener("fetch", event => {
   event.respondWith(
     caches.match(event.request).then(response => {
-      // Return cached file OR fetch from network
       return response || fetch(event.request).catch(() => caches.match(OFFLINE_URL));
     })
   );
