@@ -13,6 +13,7 @@ const FILES_TO_CACHE = [
   "/announcements.html",
   "/lectures.html",
   "/authoring.html",
+  "/tdashboard.html",
 
   // CSS
   "/style.css",
@@ -24,6 +25,7 @@ const FILES_TO_CACHE = [
   "/announcements.css",
   "/lectures.css",
   "/authoring.css",
+  "/tdashboard.css",
   
 
   // JS
@@ -36,6 +38,7 @@ const FILES_TO_CACHE = [
   "/announcements.js",
   "/lectures.js",
   "/authoring.js",
+  "/tdashboard.js"
 
   // Manifest & fallback
   "/manifest.json",
