@@ -17,16 +17,25 @@ const FILES_TO_CACHE = [
   // CSS
   "/style.css",
   "/student.css",
+  "/teacher.css",
+  "/about.css",
   "/contact.css",
   "/dobut.css",
-  "/about.css",
+  "/announcements.css",
+  "/lectures.css",
+  "/authoring.css",
+  
 
   // JS
   "/app.js",
   "/student.js",
+  "/teacher.js",
+  "/about.js",
   "/contact.js",
   "/dobut.js",
-  "/about.js",
+  "/announcements.js",
+  "/lectures.js",
+  "/authoring.js",
 
   // Manifest & fallback
   "/manifest.json",
