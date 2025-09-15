@@ -28,6 +28,22 @@
       <label for="studentName">Your Name:</label>
       <input id="studentName" placeholder="Enter your name">
       <button id="saveName" class="btn">Save</button>
+
+  <main class="container dashboard">
+    <aside class="sidebar">
+      <h3>Subjects</h3>
+      <ul>
+        <li><button onclick="showLessons('math')">📐 Math</button></li>
+        <li><button onclick="showLessons('science')">🔬 Science</button></li>
+        <li><button onclick="showLessons('digital')">💻 Digital Literacy</button></li>
+      </ul>
+    </aside>
+   
+  
+
+    <section class="content">
+      <h2 id="subject-title">Select a subject</h2>
+      <div id="lessons"></div>
     </section>
 
     <!-- Subject Selection -->

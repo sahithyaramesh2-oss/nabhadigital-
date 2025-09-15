@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Authoring Tool</title>
+  <link rel="stylesheet" href="authoring.css">
+  <link rel="manifest" href="manifest.json">
+</head>
+<body>
+  <header>
+    <h1>📖 Authoring Tool</h1>
+    <p>Create and manage lessons</p>
+  </header>
+
+  <main>
+    <!-- Lesson Form -->
+    <section class="form-section">
+      <h2>Add New Lesson</h2>
+      <form id="lessonForm">
+        <label for="title">Lesson Title:</label>
+        <input type="text" id="title" required>
+
+        <label for="desc">Description:</label>
+        <textarea id="desc" rows="4" required></textarea>
+
+        <label for="media">Image/Video Link:</label>
+        <input type="url" id="media" placeholder="https://example.com/media.jpg">
+
+        <button type="submit">➕ Add Lesson</button>
+      </form>
+    </section>
+
+    <!-- Lesson Preview -->
+    <section class="preview-section">
+      <h2>Lessons Created</h2>
+      <div id="lessonList" class="lesson-list">
+        <!-- Dynamic lessons will appear here -->
+      </div>
+    </section>
+  </main>
+
+  <script src="authoring.js"></script>
+</body>
+</html>
