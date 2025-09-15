@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Teacher Dashboard</title>
+  <link rel="stylesheet" href="tdashboard.css">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#2563eb">
+</head>
+<body>
+  <header>
+    <h1>Teacher Dashboard</h1>
+    <nav>
+      <a href="teacher-dashboard.html">🏠 Dashboard</a>
+      <a href="lectures.html">🎥 Lectures</a>
+      <a href="authoring.html">📝 Create Content</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="dashboard-grid">
+
+      <!-- Assignments -->
+      <div class="card">
+        <h2>📚 Assignments</h2>
+        <textarea id="assignmentInput" placeholder="Enter assignment details..."></textarea>
+        <button onclick="addAssignment()">Add Assignment</button>
+        <ul id="assignmentList"></ul>
+      </div>
+
+      <!-- Reports -->
+      <div class="card">
+        <h2>📊 Student Progress</h2>
+        <p>Track how students are doing in assignments.</p>
+        <table id="progressTable">
+          <thead>
+            <tr>
+              <th>Student</th>
+              <th>Assignments Submitted</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+
+      
+
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Nabha Digital Learning</p>
+  </footer>
+
+  <script src="tdashboard.js"></script>
+  <script>
+  if ("serviceWorker" in navigator) {
+    navigator.serviceWorker.register("sw.js")
+      .then(() => console.log("✅ Service Worker Registered"))
+      .catch(err => console.error("SW registration failed:", err));
+  }
+  </script>
+</body>
+</html>
