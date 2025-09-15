@@ -1,5 +1,5 @@
-const CACHE_NAME = "nabha-digital-cache-v2";
-const OFFLINE_URL = "offline.html";
+const CACHE_NAME = "nabha-digital-cache-v3";
+const OFFLINE_URL = "/offline.html";
 
 // ✅ Add ALL pages, CSS, and JS here
 const FILES_TO_CACHE = [
@@ -15,24 +15,23 @@ const FILES_TO_CACHE = [
   "/authoring.html",
   "/tdashboard.html",
 
-  // CSS
-  "/style.css",
-  "/student.css",
-  "/teacher.css",
-  "/about.css",
-  "/contact.css",
-  "/dobut.css",
-  "/lectures.css",
-  
+  // CSS (ensure correct paths)
+  "/css/style.css",
+  "/css/student.css",
+  "/css/teacher.css",
+  "/css/about.css",
+  "/css/contact.css",
+  "/css/dobut.css",
+  "/css/lectures.css",
 
-  // JS
-  "/app.js",
-  "/student.js",
-  "/teacher.js",
-  "/about.js",
-  "/contact.js",
-  "/dobut.js",
-  "/lectures.js",
+  // JS (ensure correct paths)
+  "/js/app.js",
+  "/js/student.js",
+  "/js/teacher.js",
+  "/js/about.js",
+  "/js/contact.js",
+  "/js/dobut.js",
+  "/js/lectures.js",
 
   // Manifest & fallback
   "/manifest.json",
@@ -70,3 +69,4 @@ self.addEventListener("fetch", event => {
     })
   );
 });
+
