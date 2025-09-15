@@ -1,41 +1,53 @@
-const CACHE_NAME = "ndl-cache-v1";
+const CACHE_NAME = "digi-learn-cache-v1";
 const urlsToCache = [
   "index.html",
-  "student.html",
-  "teacher.html",
-  "about.html",
-  "contact.html",
   "style.css",
   "app.js",
-  "teacher.js",
   "manifest.json",
-  "icon.png"
+  "about.html",
+  "contact.html",
+  "student.html",
+  "teacher.html",
+  "dobut.html",
+  "icons/icon-192.png",
+  "icons/icon-512.png"
 ];
 
-// Install SW & cache files
+// Install SW and cache files
 self.addEventListener("install", (event) => {
   event.waitUntil(
     caches.open(CACHE_NAME).then((cache) => {
+      console.log("Caching app shell...");
       return cache.addAll(urlsToCache);
     })
   );
 });
 
-// Serve cached content when offline
-self.addEventListener("fetch", (event) => {
-  event.respondWith(
-    caches.match(event.request).then((response) => {
-      return response || fetch(event.request);
-    })
-  );
-});
-
-// Update cache if needed
+// Activate SW and clear old caches
 self.addEventListener("activate", (event) => {
   event.waitUntil(
     caches.keys().then((cacheNames) => {
       return Promise.all(
-        cacheNames.filter((name) => name !== CACHE_NAME).map((name) => caches.delete(name))
+        cacheNames.map((cache) => {
+          if (cache !== CACHE_NAME) {
+            console.log("Deleting old cache:", cache);
+            return caches.delete(cache);
+          }
+        })
+      );
+    })
+  );
+});
+
+// Fetch from cache, fallback to network
+self.addEventListener("fetch", (event) => {
+  event.respondWith(
+    caches.match(event.request).then((response) => {
+      return (
+        response ||
+        fetch(event.request).catch(() =>
+          caches.match("index.html") // fallback offline page
+        )
       );
     })
   );

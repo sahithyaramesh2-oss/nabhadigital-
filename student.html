@@ -5,9 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Student Dashboard - Nabha Digital Learning</title>
   <link rel="stylesheet" href="student.css">
-  <link rel="manifest" href="manifest.json">
-  <meta name="theme-color" content="#2563eb">
-  <script defer src="student.js"></script>
+   <link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#2563eb">
+<script>
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker.register("sw.js")
+    .then(() => console.log("✅ Service Worker Registered"))
+    .catch(err => console.error("SW registration failed:", err));
+}
+</script>
   
 </head>
 <body>
@@ -74,13 +80,7 @@
       <div id="answersList">No answers yet.</div>
     </section>
   </main>
-   <script>
-  if ("serviceWorker" in navigator) {
-    navigator.serviceWorker.register("sw.js")
-      .then(() => console.log("✅ Service Worker Registered"))
-      .catch(err => console.error("SW registration failed:", err));
-  }
-</script>
+ 
   <footer>
     &copy; 2025 Nabha Digital Learning
   </footer>
