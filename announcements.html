@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Announcements - Digital Learning Platform</title>
+  <link rel="stylesheet" href="announcements.css">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#2563eb">
+  <script>
+    if ("serviceWorker" in navigator) {
+      navigator.serviceWorker.register("sw.js")
+        .then(() => console.log("✅ Service Worker Registered"))
+        .catch(err => console.error("SW registration failed:", err));
+    }
+  </script>
+</head>
+<body>
+  <header>
+    <h1>📢 Announcements</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="student.html">Student</a>
+      <a href="teacher.html">Teacher</a>
+      <a href="about.html">About</a>
+      <a href="announcements.html">Announcements</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="announcement-form">
+      <h2>Create a New Announcement</h2>
+      <form id="announcementForm">
+        <input type="text" id="title" placeholder="Enter Title" required>
+        <textarea id="message" placeholder="Enter Announcement Message" required></textarea>
+        <button type="submit">➕ Add Announcement</button>
+      </form>
+    </section>
+
+    <section class="announcement-list">
+      <h2>All Announcements</h2>
+      <ul id="announcementContainer"></ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Digital Learning Platform - Nabha</p>
+  </footer>
+
+  <script src="announcements.js"></script>
+</body>
+</html>
