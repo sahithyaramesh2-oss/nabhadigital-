@@ -1,9 +1,11 @@
-const CACHE_NAME = "nabha-digital-cache-v2";
-const OFFLINE_URL = "offline.html";
+// Service Worker for Nabha Digital
 
-// ✅ Add ALL pages, CSS, and JS here
+const CACHE_NAME = "nabha-digital-cache-v5"; // Increment version to update cache
+const OFFLINE_URL = "/offline.html";
+
+// List all static files to cache
 const FILES_TO_CACHE = [
-  "/",                 // root
+  "/", 
   "/index.html",
   "/student.html",
   "/teacher.html",
@@ -16,23 +18,28 @@ const FILES_TO_CACHE = [
   "/tdashboard.html",
 
   // CSS
-  "/style.css",
-  "/student.css",
-  "/teacher.css",
-  "/about.css",
-  "/contact.css",
-  "/dobut.css",
-  "/lectures.css",
-  
+  "/css/style.css",
+  "/css/student.css",
+  "/css/teacher.css",
+  "/css/about.css",
+  "/css/contact.css",
+  "/css/dobut.css",
+  "/css/lectures.css",
+  "/css/announcements.css",
+  "/css/tdashboard.css",
+  "/css/authoring.css",
 
   // JS
-  "/app.js",
-  "/student.js",
-  "/teacher.js",
-  "/about.js",
-  "/contact.js",
-  "/dobut.js",
-  "/lectures.js",
+  "/js/app.js",
+  "/js/student.js",
+  "/js/teacher.js",
+  "/js/about.js",
+  "/js/contact.js",
+  "/js/dobut.js",
+  "/js/lectures.js",
+  "/js/announcements.js",
+  "/js/tdashboard.js",
+  "/js/authoring.js",
 
   // Manifest & fallback
   "/manifest.json",
@@ -43,30 +50,52 @@ const FILES_TO_CACHE = [
 self.addEventListener("install", event => {
   event.waitUntil(
     caches.open(CACHE_NAME).then(cache => {
-      console.log("📦 Caching app shell and content");
+      console.log("📦 Caching app shell and content...");
       return cache.addAll(FILES_TO_CACHE);
     })
   );
   self.skipWaiting();
 });
 
-// Activate - cleanup old caches
+// Activate Service Worker - cleanup old caches
 self.addEventListener("activate", event => {
   event.waitUntil(
     caches.keys().then(keys => {
       return Promise.all(
-        keys.filter(k => k !== CACHE_NAME).map(k => caches.delete(k))
+        keys
+          .filter(key => key !== CACHE_NAME)
+          .map(key => caches.delete(key))
       );
     })
   );
   self.clients.claim();
 });
 
-// Fetch - serve cached content when offline
+// Fetch handler - serve cached content when offline
 self.addEventListener("fetch", event => {
   event.respondWith(
-    caches.match(event.request).then(response => {
-      return response || fetch(event.request).catch(() => caches.match(OFFLINE_URL));
+    caches.match(event.request).then(cachedResponse => {
+      // Return cached response if available
+      if (cachedResponse) return cachedResponse;
+
+      // Otherwise fetch from network and cache it dynamically
+      return fetch(event.request)
+        .then(networkResponse => {
+          return caches.open(CACHE_NAME).then(cache => {
+            // Only cache GET requests
+            if (event.request.method === "GET") {
+              cache.put(event.request, networkResponse.clone());
+            }
+            return networkResponse;
+          });
+        })
+        .catch(() => {
+          // If network fails, return offline page for navigation requests
+          if (event.request.mode === "navigate") {
+            return caches.match(OFFLINE_URL);
+          }
+        });
     })
   );
 });
+
