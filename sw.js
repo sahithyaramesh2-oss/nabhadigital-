@@ -1,4 +1,4 @@
-const CACHE_NAME = "nabha-digital-cache-v1";
+const CACHE_NAME = "nabha-digital-cache-v2"; // increment version
 const OFFLINE_URL = "/offline.html";
 
 const FILES_TO_CACHE = [
@@ -45,14 +45,22 @@ const FILES_TO_CACHE = [
 
 // Install
 self.addEventListener("install", event => {
+  console.log("Service Worker: Installing...");
   event.waitUntil(
-    caches.open(CACHE_NAME).then(cache => cache.addAll(FILES_TO_CACHE))
+    caches.open(CACHE_NAME).then(cache => {
+      return Promise.all(
+        FILES_TO_CACHE.map(file =>
+          cache.add(file).catch(err => console.warn("Failed to cache:", file, err))
+        )
+      );
+    })
   );
   self.skipWaiting();
 });
 
 // Activate
 self.addEventListener("activate", event => {
+  console.log("Service Worker: Activating...");
   event.waitUntil(
     caches.keys().then(keys => 
       Promise.all(keys.filter(k => k !== CACHE_NAME).map(k => caches.delete(k)))
@@ -65,7 +73,9 @@ self.addEventListener("activate", event => {
 self.addEventListener("fetch", event => {
   event.respondWith(
     caches.match(event.request)
-      .then(response => response || fetch(event.request).catch(() => caches.match(OFFLINE_URL)))
+      .then(response => response || fetch(event.request)
+        .catch(() => caches.match(OFFLINE_URL))
+      )
   );
 });
 
