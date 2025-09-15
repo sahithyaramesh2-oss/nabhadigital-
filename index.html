@@ -5,9 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Digital Learning Platform - Nabha</title>
   <link rel="stylesheet" href="style.css" />
-    <link rel="manifest" href="manifest.json">
-<<<<<<< HEAD
-    <link rel="serviceWorker" href="sw.js">
+   <link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#2563eb">
 =======
   
 >>>>>>> c14df7b65a7aa2f8e039275839b90b3391b35914
@@ -59,6 +58,13 @@ Make education engaging and future-ready
   </footer>
 
   <script src="app.js"></script>
+  script>
+  if ("serviceWorker" in navigator) {
+    navigator.serviceWorker.register("sw.js")
+      .then(() => console.log("✅ Service Worker Registered"))
+      .catch(err => console.error("SW registration failed:", err));
+  }
+</script>
 </body>
 </html>
 

@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="dobut.css">
   <link rel="stylesheet" href="style.css">
   <link rel="manifest" href="manifest.json">
-  <link rel="serviceWorker" href="sw.js">
+<meta name="theme-color" content="#2563eb">
 </head>
 <body>
     <header>
@@ -36,6 +36,13 @@
     </footer>
 
   <script src="dobut.js"></script>
+  script>
+  if ("serviceWorker" in navigator) {
+    navigator.serviceWorker.register("sw.js")
+      .then(() => console.log("✅ Service Worker Registered"))
+      .catch(err => console.error("SW registration failed:", err));
+  }
+</script>
 </body>
 </html>
 
