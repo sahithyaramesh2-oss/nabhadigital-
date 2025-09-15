@@ -7,13 +7,7 @@
   <link rel="stylesheet" href="authoring.css">
   <link rel="manifest" href="manifest.json">
 <meta name="theme-color" content="#2563eb">
-<script>
-if ("serviceWorker" in navigator) {
-  navigator.serviceWorker.register("sw.js")
-    .then(() => console.log("✅ Service Worker Registered"))
-    .catch(err => console.error("SW registration failed:", err));
-}
-</script>
+
 </head>
 <body>
   <header>
@@ -49,5 +43,12 @@ if ("serviceWorker" in navigator) {
   </main>
 
   <script src="authoring.js"></script>
+  <script>
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker.register("sw.js")
+    .then(() => console.log("✅ Service Worker Registered"))
+    .catch(err => console.error("SW registration failed:", err));
+}
+</script>
 </body>
 </html>
