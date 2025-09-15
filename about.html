@@ -3,63 +3,89 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About - Nabha Digital Learning</title>
-  <link rel="stylesheet" href="style.css">
+  <title>About Us - Digital Learning Nabha</title>
+  <link rel="stylesheet" href="about.css">
 </head>
 <body>
   <header>
-    <h1>About Us</h1>
+    <h1>About Our Platform</h1>
     <nav>
       <a href="index.html">Home</a>
-      <a href="student.html">Student</a>
-      <a href="teacher.html">Teacher</a>
-      <a href="about.html">About</a>
+      <a href="student.html">Students</a>
+      <a href="teacher.html">Teachers</a>
+      <a href="authoring.html">Authoring</a>
+      <a href="about.html" class="active">About</a>
       <a href="contact.html">Contact</a>
-      <a herf="dobut.html">Doubt section</a>
     </nav>
   </header>
 
-  <main class="container">
-    <section>
-      <h2>Our Mission</h2>
+  <main>
+    <section class="intro-card">
+      <h2>Who We Are</h2>
       <p>
-        The Nabha Digital Learning Platform is designed for rural school students 
-        who lack access to modern digital resources. Our mission is to bridge 
-        the digital divide by providing offline-first, low-cost, multilingual 
-        educational tools.
+        This Digital Learning Platform was created under the Smart India Hackathon to empower 
+        <strong>rural school students in Nabha</strong>. Our goal is to provide offline-first, 
+        interactive, and localized digital education that bridges the gap between rural and urban learning.
       </p>
     </section>
 
-    <section>
-      <h2>Why It Matters</h2>
-      <p>
-        In many rural areas, poor internet connectivity and outdated infrastructure 
-        prevent students from developing essential digital skills. 
-        This platform empowers students with interactive lessons, digital literacy modules, 
-        and tools for teachers to track progress.
-      </p>
-    </section>
-
-    <section>
-      <h2>Key Features</h2>
+    <section class="timeline">
+      <h2>Our Mission Journey</h2>
       <ul>
-        <li>📚 Interactive offline lessons</li>
-        <li>🌍 Content in Punjabi, Hindi, and English</li>
-        <li>👩‍🏫 Teacher dashboards for monitoring progress</li>
-        <li>💻 Digital literacy training for rural students</li>
+        <li>
+          <div class="timeline-content">
+            <h3>2025</h3>
+            <p>Project launched under Smart India Hackathon with focus on Nabha schools.</p>
+          </div>
+        </li>
+        <li>
+          <div class="timeline-content">
+            <h3>Phase 1</h3>
+            <p>Designed offline-first lessons and digital literacy modules in local languages.</p>
+          </div>
+        </li>
+        <li>
+          <div class="timeline-content">
+            <h3>Phase 2</h3>
+            <p>Teacher dashboard and student progress tracking introduced.</p>
+          </div>
+        </li>
+        <li>
+          <div class="timeline-content">
+            <h3>Future</h3>
+            <p>Scale to other rural areas and integrate adaptive learning technology.</p>
+          </div>
+        </li>
       </ul>
+    </section>
+
+    <section class="team">
+      <h2>Why We’re Unique</h2>
+      <div class="card-grid">
+        <div class="card">
+          <h3>Offline Ready</h3>
+          <p>Lessons and quizzes work without internet, perfect for rural schools.</p>
+        </div>
+        <div class="card">
+          <h3>Local Language</h3>
+          <p>Supports Punjabi, Hindi, and English to ensure inclusiveness.</p>
+        </div>
+        <div class="card">
+          <h3>Teacher Friendly</h3>
+          <p>Simple authoring tool lets teachers create and share lessons easily.</p>
+        </div>
+        <div class="card">
+          <h3>Low-End Optimized</h3>
+          <p>Runs on affordable devices without slowing down.</p>
+        </div>
+      </div>
     </section>
   </main>
 
   <footer>
-    <p>&copy; 2025 Nabha Digital Learning | Smart India Hackathon</p>
+    <p>&copy; 2025 Digital Learning Platform - Nabha</p>
   </footer>
-  <script>
-  if ("serviceWorker" in navigator) {
-    navigator.serviceWorker.register("sw.js")
-      .then(() => console.log("✅ Service Worker Registered"))
-      .catch(err => console.error("SW registration failed:", err));
-  }
-</script>
+
+  <script src="about.js"></script>
 </body>
 </html>

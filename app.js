@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 // Language toggle
 const langToggle = document.getElementById("lang-toggle");
 if (langToggle) {
@@ -59,3 +60,20 @@ if (uploadForm && lectureList) {
     }
   });
 }
+=======
+// Simple interactive script for index.html
+document.addEventListener("DOMContentLoaded", () => {
+  const btn = document.getElementById("learnMoreBtn");
+  const info = document.getElementById("infoText");
+
+  btn.addEventListener("click", () => {
+    if (info.style.display === "none") {
+      info.style.display = "block";
+      btn.textContent = "Hide Info";
+    } else {
+      info.style.display = "none";
+      btn.textContent = "Learn More";
+    }
+  });
+});
+>>>>>>> 1284b4489507eb619fca88b038639a85cd750f9d
