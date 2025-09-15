@@ -42,8 +42,10 @@ const assignments = {
   science: [
     { id: "sci1", title: { en: "Plants", pa: "ਪੌਦੇ", hi: "पौधे" }, question: { en: "Why do plants need sunlight?", pa: "ਪੌਦਿਆਂ ਨੂੰ ਧੁੱਪ ਦੀ ਲੋੜ ਕਿਉਂ ਹੈ?", hi: "पौधों को सूर्य की आवश्यकता क्यों है?" } }
   ],
-  english: [
-    { id: "eng1", title: { en: "Grammar", pa: "ਵਿਆਕਰਣ", hi: "व्याकरण" }, question: { en: "Write a sentence using 'school'.", pa: "‘ਸਕੂਲ’ ਵਰਤ ਕੇ ਇੱਕ ਵਾਕ ਬਣਾਓ।", hi: "‘स्कूल’ का प्रयोग करके एक वाक्य लिखें।" } }
+  computer: [
+    { id: "comp1", title: { en: "Basic Parts", pa: "ਕੰਪਿਊਟਰ ਦੇ ਹਿੱਸੇ", hi: "कंप्यूटर के भाग" }, question: { en: "Name 3 main parts of a computer.", pa: "ਕੰਪਿਊਟਰ ਦੇ 3 ਮੁੱਖ ਹਿੱਸੇ ਦੱਸੋ।", hi: "कंप्यूटर के 3 मुख्य भाग बताइए।" } },
+    { id: "comp2", title: { en: "Internet", pa: "ਇੰਟਰਨੈੱਟ", hi: "इंटरनेट" }, question: { en: "What is the use of the internet?", pa: "ਇੰਟਰਨੈੱਟ ਦਾ ਕੀ ਉਪਯੋਗ ਹੈ?", hi: "इंटरनेट का क्या उपयोग है?" } },
+    { id: "comp3", title: { en: "Digital Safety", pa: "ਡਿਜਿਟਲ ਸੁਰੱਖਿਆ", hi: "डिजिटल सुरक्षा" }, question: { en: "Write 2 safety rules for using the internet.", pa: "ਇੰਟਰਨੈੱਟ ਵਰਤਣ ਲਈ 2 ਸੁਰੱਖਿਆ ਨਿਯਮ ਲਿਖੋ।", hi: "इंटरनेट का उपयोग करते समय 2 सुरक्षा नियम लिखें।" } }
   ]
 };
 
