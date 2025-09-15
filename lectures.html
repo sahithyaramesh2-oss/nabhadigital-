@@ -1,0 +1,44 @@
+
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Upload Lectures</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1 id="title">Upload Lectures</h1>
+    <button id="lang-toggle">ਪੰਜਾਬੀ / English</button>
+  </header>
+
+  <main>
+    <section class="upload-section">
+      <h2 id="upload-title">Add New Lecture</h2>
+      <form class="upload-form">
+        <label for="lecture-title" id="label-title">Lecture Title:</label>
+        <input type="text" id="lecture-title" placeholder="Enter title">
+
+        <label for="lecture-file" id="label-file">Upload File:</label>
+        <input type="file" id="lecture-file" accept="video/*,.pdf">
+
+        <button type="submit" id="upload-btn">Upload</button>
+      </form>
+    </section>
+
+    <section class="lecture-list">
+      <h2 id="list-title">Uploaded Lectures</h2>
+      <ul id="lecture-list">
+        <!-- Uploaded lectures will appear here -->
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Digital Learning Platform - Nabha</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

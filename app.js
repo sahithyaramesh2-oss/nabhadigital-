@@ -1,51 +1,61 @@
-// Sample lessons
-const lessonsData = {
-  math: [
-    { id: "m1", title: "Addition Basics", lang: "English", text: "2 + 2 = 4" },
-    { id: "m2", title: "ਜੋੜ (Addition)", lang: "Punjabi", text: "੨ + ੨ = ੪" },
-    { id: "m3", title: "जोड़ (Addition)", lang: "Hindi", text: "२ + २ = ४" }
-  ],
-  science: [
-    { id: "s1", title: "Plants Need Sunlight", lang: "English", text: "Plants make food using sunlight." },
-    { id: "s2", title: "ਪੌਦੇ ਤੇ ਧੁੱਪ", lang: "Punjabi", text: "ਪੌਦੇ ਧੁੱਪ ਨਾਲ ਭੋਜਨ ਬਣਾਉਂਦੇ ਹਨ।" },
-    { id: "s3", title: "पौधों को सूर्य चाहिए", lang: "Hindi", text: "पौधे सूर्य से भोजन बनाते हैं।" }
-  ],
-  digital: [
-    { id: "d1", title: "What is a Computer?", lang: "English", text: "A computer processes information." },
-    { id: "d2", title: "ਕੰਪਿਊਟਰ ਕੀ ਹੈ?", lang: "Punjabi", text: "ਕੰਪਿਊਟਰ ਜਾਣਕਾਰੀ ਸੰਭਾਲਦਾ ਹੈ।" },
-    { id: "d3", title: "कंप्यूटर क्या है?", lang: "Hindi", text: "कंप्यूटर जानकारी को संभालता है।" }
-  ]
-};
-
-// Load completed lessons from local storage
-let completed = JSON.parse(localStorage.getItem("completedLessons")) || {};
-
-function showLessons(subject) {
-  const container = document.getElementById("lessons");
-  const title = document.getElementById("subject-title");
-  title.innerText = subject.charAt(0).toUpperCase() + subject.slice(1);
-
-  container.innerHTML = "";
-
-  lessonsData[subject].forEach(lesson => {
-    const div = document.createElement("div");
-    div.className = "card";
-
-    div.innerHTML = `
-      <h3>${lesson.title} (${lesson.lang})</h3>
-      <p>${lesson.text}</p>
-      <button onclick="markCompleted('${lesson.id}')"
-        ${completed[lesson.id] ? "disabled" : ""}>
-        ${completed[lesson.id] ? "✅ Completed" : "Mark as Completed"}
-      </button>
-    `;
-
-    container.appendChild(div);
+// Language toggle
+const langToggle = document.getElementById("lang-toggle");
+if (langToggle) {
+  langToggle.addEventListener("click", () => {
+    const isEnglish = document.body.lang === "en" || !document.body.lang;
+    document.body.lang = isEnglish ? "pa" : "en";
+    switchLanguage(document.body.lang);
   });
 }
 
-function markCompleted(id) {
-  completed[id] = true;
-  localStorage.setItem("completedLessons", JSON.stringify(completed));
-  showLessons(document.getElementById("subject-title").innerText.toLowerCase());
+function switchLanguage(lang) {
+  const translations = {
+    en: {
+      title: "Teacher Dashboard",
+      "welcome-text": "Welcome, Teacher!",
+      "desc-text": "Here you can manage your content, upload lectures, and track student progress.",
+      "upload-title": "Add New Lecture",
+      "label-title": "Lecture Title:",
+      "label-file": "Upload File:",
+      "upload-btn": "Upload",
+      "list-title": "Uploaded Lectures"
+    },
+    pa: {
+      title: "ਅਧਿਆਪਕ ਡੈਸ਼ਬੋਰਡ",
+      "welcome-text": "ਸਵਾਗਤ ਹੈ, ਅਧਿਆਪਕ ਜੀ!",
+      "desc-text": "ਇੱਥੇ ਤੁਸੀਂ ਆਪਣੀ ਸਮੱਗਰੀ ਸੰਭਾਲ ਸਕਦੇ ਹੋ, ਲੈਕਚਰ ਅਪਲੋਡ ਕਰ ਸਕਦੇ ਹੋ ਅਤੇ ਵਿਦਿਆਰਥੀਆਂ ਦੀ ਪ੍ਰਗਤੀ ਦੇਖ ਸਕਦੇ ਹੋ।",
+      "upload-title": "ਨਵਾਂ ਲੈਕਚਰ ਜੋੜੋ",
+      "label-title": "ਲੈਕਚਰ ਸਿਰਲੇਖ:",
+      "label-file": "ਫਾਈਲ ਅਪਲੋਡ ਕਰੋ:",
+      "upload-btn": "ਅਪਲੋਡ ਕਰੋ",
+      "list-title": "ਅਪਲੋਡ ਕੀਤੇ ਲੈਕਚਰ"
+    }
+  };
+
+  const dict = translations[lang];
+  for (const id in dict) {
+    const el = document.getElementById(id);
+    if (el) el.textContent = dict[id];
+  }
+}
+
+// Lecture Upload (temporary demo storage)
+const uploadForm = document.querySelector(".upload-form");
+const lectureList = document.getElementById("lecture-list");
+
+if (uploadForm && lectureList) {
+  uploadForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const title = document.getElementById("lecture-title").value;
+    const file = document.getElementById("lecture-file").files[0];
+
+    if (title && file) {
+      const li = document.createElement("li");
+      li.textContent = `${title} - ${file.name}`;
+      lectureList.appendChild(li);
+      uploadForm.reset();
+    } else {
+      alert("Please enter a title and upload a file.");
+    }
+  });
 }
