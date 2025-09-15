@@ -38,7 +38,7 @@ const FILES_TO_CACHE = [
   "/announcements.js",
   "/lectures.js",
   "/authoring.js",
-  "/tdashboard.js"
+  "/tdashboard.js",
 
   // Manifest & fallback
   "/manifest.json",
