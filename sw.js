@@ -22,10 +22,7 @@ const FILES_TO_CACHE = [
   "/about.css",
   "/contact.css",
   "/dobut.css",
-  "/announcements.css",
   "/lectures.css",
-  "/authoring.css",
-  "/tdashboard.css",
   
 
   // JS
@@ -35,10 +32,7 @@ const FILES_TO_CACHE = [
   "/about.js",
   "/contact.js",
   "/dobut.js",
-  "/announcements.js",
   "/lectures.js",
-  "/authoring.js",
-  "/tdashboard.js",
 
   // Manifest & fallback
   "/manifest.json",
