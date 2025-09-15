@@ -1,36 +1,38 @@
-/* General Reset */
+/* Reset */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* Body styling */
+/* Body */
 body {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  background: linear-gradient(to bottom right, #f0f9ff, #e0f7fa);
+  font-family: Arial, Helvetica, sans-serif;
+  background: linear-gradient(135deg, #e0f7fa, #f0f9ff);
   color: #333;
   line-height: 1.6;
   padding: 20px;
 }
 
-/* About Section Container */
+/* About Container */
 .about-container {
   max-width: 900px;
-  margin: 0 auto;
-  background: #fff;
+  margin: auto;
+  background: #ffffff;
   padding: 30px;
   border-radius: 12px;
-  box-shadow: 0px 4px 12px rgba(0,0,0,0.1);
-  animation: fadeIn 1s ease-in-out;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
+  animation: fadeIn 0.8s ease-in-out;
 }
 
 /* Heading */
 .about-container h1 {
-  font-size: 2.2rem;
+  font-size: 2.4rem;
   text-align: center;
   margin-bottom: 20px;
   color: #00796b;
+  border-bottom: 2px solid #00796b;
+  padding-bottom: 10px;
 }
 
 /* Paragraphs */
@@ -40,45 +42,37 @@ body {
   font-size: 1.1rem;
 }
 
-/* Highlight box */
+/* Highlight Box */
 .highlight {
   background: #e0f2f1;
-  padding: 12px;
+  padding: 14px;
   border-left: 5px solid #00796b;
   border-radius: 6px;
   margin: 20px 0;
   font-style: italic;
+  color: #004d40;
 }
 
-/* Team Members */
+/* Team Section */
 .team {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 15px;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 18px;
   margin-top: 25px;
 }
 
 .team-member {
   background: #fafafa;
-  border-radius: 8px;
+  border-radius: 10px;
   padding: 15px;
   text-align: center;
-  transition: transform 0.3s;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   border: 1px solid #ddd;
 }
 
 .team-member:hover {
-  transform: scale(1.05);
-  box-shadow: 0px 3px 8px rgba(0,0,0,0.2);
+  transform: translateY(-6px);
+  box-shadow: 0px 6px 14px rgba(0, 0, 0, 0.2);
 }
 
-.team-member h3 {
-  margin-bottom: 8px;
-  color: #00796b;
-}
-
-/* Animation */
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
+.te
