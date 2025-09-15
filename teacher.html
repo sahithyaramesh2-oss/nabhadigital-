@@ -4,16 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Teacher Dashboard</title>
-  <link rel="stylesheet" href="style.css">
-    <link rel="manifest" href="manifest.json">
-<meta name="theme-color" content="#2563eb">
-<script>
-if ("serviceWorker" in navigator) {
-  navigator.serviceWorker.register("sw.js")
-    .then(() => console.log("✅ Service Worker Registered"))
-    .catch(err => console.error("SW registration failed:", err));
-}
-</script>
+  <link rel="stylesheet" href="teacher.css">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#2563eb">
+
 </head>
 <body>
   <header>
@@ -40,5 +34,19 @@ if ("serviceWorker" in navigator) {
   </footer>
 
   <script src="app.js"></script>
+  <script>
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker.register("sw.js")
+    .then(() => console.log("✅ Service Worker Registered"))
+    .catch(err => console.error("SW registration failed:", err));
+}
+</script>
+  <script>
+    if ("serviceWorker" in navigator) {
+      navigator.serviceWorker.register("sw.js")
+        .then(() => console.log("✅ Service Worker Registered"))
+        .catch(err => console.error("SW registration failed:", err));
+    }
+  </script>
 </body>
 </html>

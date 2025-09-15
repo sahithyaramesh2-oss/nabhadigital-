@@ -7,17 +7,17 @@
   <link rel="stylesheet" href="dobut.css">
   <link rel="stylesheet" href="style.css">
   <link rel="manifest" href="manifest.json">
-<meta name="theme-color" content="#2563eb">
-<script>
-if ("serviceWorker" in navigator) {
-  navigator.serviceWorker.register("sw.js")
-    .then(() => console.log("✅ Service Worker Registered"))
-    .catch(err => console.error("SW registration failed:", err));
-}
-</script>
+  <meta name="theme-color" content="#2563eb">
+  <script>
+    if ("serviceWorker" in navigator) {
+      navigator.serviceWorker.register("sw.js")
+        .then(() => console.log("✅ Service Worker Registered"))
+        .catch(err => console.error("SW registration failed:", err));
+    }
+  </script>
 </head>
 <body>
-    <header>
+  <header>
     <h1>Student Dashboard</h1>
     <nav>
       <a href="index.html">Home</a>
@@ -29,7 +29,7 @@ if ("serviceWorker" in navigator) {
     </nav>
   </header>
 
-  <div class="doubt-container">
+  <main class="doubt-container">
     <h2>💬 Doubt Session</h2>
     <textarea id="doubtInput" placeholder="Type your doubt here..."></textarea>
     <button onclick="submitDoubt()">Submit Doubt</button>
@@ -37,13 +37,14 @@ if ("serviceWorker" in navigator) {
     <div class="doubt-list" id="doubtList">
       <!-- Doubts will appear here -->
     </div>
-  </div>
-   <footer>
-        <p>&copy; 2025 nabha digital learning |smart india hacathon</p>
-    </footer>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Nabha Digital Learning | Smart India Hackathon</p>
+  </footer>
 
   <script src="dobut.js"></script>
-
 </body>
 </html>
+
 

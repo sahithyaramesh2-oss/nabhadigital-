@@ -1,0 +1,94 @@
+/* ===== General Page Style ===== */
+body {
+  margin: 0;
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: #f9fafb;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* ===== Header ===== */
+header {
+  background: #2563eb;
+  color: white;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 1.6rem;
+}
+
+#lang-toggle {
+  background: white;
+  color: #2563eb;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+#lang-toggle:hover {
+  background: #e0e7ff;
+}
+
+/* ===== Teacher Navigation ===== */
+.teacher-nav {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  background: #e0e7ff;
+  padding: 12px;
+  margin-top: 5px;
+}
+
+.teacher-nav a {
+  text-decoration: none;
+  color: #2563eb;
+  font-weight: bold;
+  padding: 6px 10px;
+  border-radius: 6px;
+  transition: all 0.3s;
+}
+
+.teacher-nav a:hover {
+  background: #2563eb;
+  color: white;
+}
+
+/* ===== Welcome Section ===== */
+.welcome {
+  padding: 30px;
+  text-align: center;
+  background: white;
+  margin: 20px auto;
+  max-width: 800px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.welcome h2 {
+  margin-top: 0;
+  color: #2563eb;
+  font-size: 1.8rem;
+}
+
+.welcome p {
+  font-size: 1rem;
+  color: #555;
+}
+
+/* ===== Footer ===== */
+footer {
+  text-align: center;
+  padding: 15px;
+  background: #f1f5f9;
+  margin-top: 40px;
+  font-size: 0.9rem;
+  color: #555;
+}

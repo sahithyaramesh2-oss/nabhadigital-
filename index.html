@@ -6,55 +6,50 @@
   <title>Digital Learning Platform - Nabha</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="manifest" href="manifest.json">
-<meta name="theme-color" content="#2563eb">
-<script>
-if ("serviceWorker" in navigator) {
-  navigator.serviceWorker.register("sw.js")
-    .then(() => console.log("✅ Service Worker Registered"))
-    .catch(err => console.error("SW registration failed:", err));
-}
-</script>
+  <meta name="theme-color" content="#2563eb">
 </head>
 <body>
   <header>
     <h1>Digital Learning Platform - Nabha</h1>
     <nav>
-      <a href="index.html">Home  <t> |</t></a>
-      <a href="student.html">Students <t> |</t> </a>
-      <a href="teacher.html">Teachers <t> |</t> </a>
-      <a href="about.html">About <t> |</t> </a>
-      <a href="contact.html">Contact <t> |</t> </a>
-      <a href="dobut.html">Doubt section</a>
+      <a href="index.html">Home <t> |</t></a>
+      <a href="student.html">Students <t> |</t></a>
+      <a href="teacher.html">Teachers <t> |</t></a>
+      <a href="about.html">About <t> |</t></a>
+      <a href="contact.html">Contact <t> |</t></a>
+      <a href="dobut.html">Doubt Section</a>
     </nav>
   </header>
 
   <main>
     <h2>Welcome</h2>
-    <p> This platform is offline-capable digital learning  for rural schools, combined with teacher training and community engagement to ensure long-term adoption. It builds digital confidence among teachers and students.
-Make education engaging and future-ready
-.</p>
+    <p>
+      This platform is offline-capable digital learning for rural schools, combined with teacher training and community engagement 
+      to ensure long-term adoption. It builds digital confidence among teachers and students. Make education engaging and future-ready.
+    </p>
 
     <!-- 📸 Photo Section -->
     <section class="photo-gallery">
       <h3>Highlights</h3>
       <div class="gallery">
-        <img src="https://imgs.search.brave.com/tl_QyeLX8909jihY67WqeHdUogx5006seZkx966WS1g/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly90My5m/dGNkbi5uZXQvanBn/LzA2Lzg1LzAxLzIy/LzM2MF9GXzY4NTAx/MjIwOF9kNXRLYjBI/TXZzS0FhRW1zN3R3/NmhrSkVodlhIUnVj/OS5qcGc" alt="Digital classroom" />
-        <img src="https://imgs.search.brave.com/QJC3pqxzrNCbo0GNIbwAcAnYOjFKc3yXAAvhq6SrO0A/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvNDU4/NjgyMjYxL3Bob3Rv/L21hbGUtdGVhY2hl/ci10ZWFjaGluZy1z/dHVkZW50cy1pbi1h/LXJ1cmFsLXNjaG9v/bC1vZi1pbmRpYS5q/cGc_cz02MTJ4NjEy/Jnc9MCZrPTIwJmM9/amVHZHV2SHVONXVy/ZmpqSnlNZ1JFZXhJ/RkZzYnVWMkNfY0lh/aURqYTRjUT0" alt="Students learning" />
-        <img src="https://imgs.search.brave.com/UZ-lgZhnu68G3HFIs_GrXc7GI5b2AHb7kKlpJWQK0QE/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly90aHVt/YnMuZHJlYW1zdGlt/ZS5jb20vYi9ydXJh/bC1lZHVjYXRpb24t/cHJvZ3JhbS1vdXRk/b29ycy10ZWFjaGlu/Zy1jaGlsZHJlbi1h/cmVhcy1pc29sYXRl/ZC12aWxsYWdlcy1h/c3NhbS1pbmRpYS1j/bGFzc3Jvb20tNTA2/OTE4MDMuanBn" alt="Teacher guiding students" />
+        <img src="images/classroom1.jpg" alt="Digital classroom" />
+        <img src="images/classroom2.jpg" alt="Students learning" />
+        <img src="images/classroom3.jpg" alt="Teacher guiding students" />
       </div>
     </section>
 
+    <!-- Learn More -->
     <button id="learnMoreBtn">Learn More</button>
-  <div id="infoText" style="display:none; margin-top:15px; text-align:left; max-width:600px; margin:auto; background:#f1f1f1; padding:15px; border-radius:8px;">
-    <h3>About the Platform</h3>
-    <ul>
-      <li>📚 <b>Offline Access:</b> Works without internet once lessons are downloaded.</li>
-      <li>🌍 <b>Local Languages:</b> Available in Punjabi, Hindi, and English for better understanding.</li>
-      <li>👩‍🏫 <b>Teacher Dashboard:</b> Helps teachers track student progress and assign lessons.</li>
-      <li>💻 <b>Optimized for Low-End Devices:</b> Runs smoothly even on basic school computers.</li>
-      <li>🎮 <b>Interactive Content:</b> Includes quizzes, videos, and practice exercises to keep learning fun.</li>
-    </ul>
-  </div>
+    <div id="infoText" style="display:none; margin-top:15px; text-align:left; max-width:600px; margin:auto; background:#f1f1f1; padding:15px; border-radius:8px;">
+      <h3>About the Platform</h3>
+      <ul>
+        <li>📚 <b>Offline Access:</b> Works without internet once lessons are downloaded.</li>
+        <li>🌍 <b>Local Languages:</b> Available in Punjabi, Hindi, and English for better understanding.</li>
+        <li>👩‍🏫 <b>Teacher Dashboard:</b> Helps teachers track student progress and assign lessons.</li>
+        <li>💻 <b>Optimized for Low-End Devices:</b> Runs smoothly even on basic school computers.</li>
+        <li>🎮 <b>Interactive Content:</b> Includes quizzes, videos, and practice exercises to keep learning fun.</li>
+      </ul>
+    </div>
   </main>
 
   <footer>
@@ -62,7 +57,14 @@ Make education engaging and future-ready
   </footer>
 
   <script src="app.js"></script>
-
+  <script>
+    if ("serviceWorker" in navigator) {
+      navigator.serviceWorker.register("sw.js")
+        .then(() => console.log("✅ Service Worker Registered"))
+        .catch(err => console.error("SW registration failed:", err));
+    }
+  </script>
 </body>
 </html>
+
 
