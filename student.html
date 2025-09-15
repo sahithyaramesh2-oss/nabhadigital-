@@ -4,24 +4,30 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Student Dashboard - Nabha Digital Learning</title>
-  <link rel="stylesheet" href="style.css">
-  <script defer src="app.js"></script>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="student.css">
   <link rel="manifest" href="manifest.json">
-<meta name="theme-color" content="#2563eb">
+  <meta name="theme-color" content="#2563eb">
+  <script defer src="student.js"></script>
 </head>
 <body>
   <header>
-    <h1>Student Dashboard</h1>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="student.html">Student</a>
-      <a href="teacher.html">Teacher</a>
-      <a href="about.html">About</a>
-      <a href="contact.html">Contact</a>
-      <a href="dobut.html">Doubt section</a>
-    </nav>
+    <h1>Nabha Digital Learning — Student Dashboard</h1>
+    <div class="top-controls">
+      <div class="lang-toggle">
+        <button id="btn-en">English</button>
+        <button id="btn-pa">ਪੰਜਾਬੀ</button>
+        <button id="btn-hi">हिन्दी</button>
+      </div>
+      <span id="student-name-display"></span>
+    </div>
   </header>
+
+  <main class="container">
+    <!-- Student Info -->
+    <section class="card">
+      <label for="studentName">Your Name:</label>
+      <input id="studentName" placeholder="Enter your name">
+      <button id="saveName" class="btn">Save</button>
 
   <main class="container dashboard">
     <aside class="sidebar">
@@ -32,24 +38,40 @@
         <li><button onclick="showLessons('digital')">💻 Digital Literacy</button></li>
       </ul>
     </aside>
-   <video width="600" controls>
-  <source src="si.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
+   
+  
+
     <section class="content">
       <h2 id="subject-title">Select a subject</h2>
       <div id="lessons"></div>
     </section>
-    </main>
-    <footer>
-        <p>&copy; 2025 nabha digital learning |smart india hacathon</p>
-    </footer>
-    <script>
-  if ("serviceWorker" in navigator) {
-    navigator.serviceWorker.register("sw.js")
-      .then(() => console.log("✅ Service Worker Registered"))
-      .catch(err => console.error("SW registration failed:", err));
-  }
-</script>
+
+    <!-- Subject Selection -->
+    <section class="card">
+      <h2 id="subject-title">Subjects</h2>
+      <select id="subjectSelect">
+        <option value="math">Math</option>
+        <option value="science">Science</option>
+        <option value="english">English</option>
+      </select>
+    </section>
+
+    <!-- Assignments -->
+    <section class="card">
+      <h2 id="assignments-title">Assignments</h2>
+      <p id="assignments-sub">View your tasks and submit answers below.</p>
+      <div id="assignList" class="assign-list"></div>
+    </section>
+
+    <!-- Submitted Answers -->
+    <section class="card">
+      <h3 id="submitted-title">Your Answers</h3>
+      <div id="answersList">No answers yet.</div>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2025 Nabha Digital Learning
+  </footer>
 </body>
 </html>
