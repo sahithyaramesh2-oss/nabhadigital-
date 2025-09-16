@@ -1,23 +1,30 @@
 {
   "name": "Nabha Digital Learning Platform",
   "short_name": "Nabha Digital",
-  "description": "Offline-capable digital learning for rural schools.",
+  "description": "Offline-capable digital learning platform",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#000000",
   "icons": [
     {
-      "src": "/images/icon-192x192.svg",
+      "src": "/images/icon-192x192.png",
       "sizes": "192x192",
-      "type": "image/svg"
+      "type": "image/png"
     },
     {
-      "src": "/images/icon-512x512.svg",
+      "src": "/images/icon-512x512.png",
       "sizes": "512x512",
-      "type": "image/svg"
+      "type": "image/png"
+    },
+    {
+      "src": "/images/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
     }
   ]
 }
+
 
 
